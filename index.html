@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Thamarai Selvi | HR Consultant & Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #6a1b9a;  /* Purple for professionalism */
+            --secondary: #ff9800; /* Orange for highlights */
+            --dark: #333;
+            --light: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), #8e44ad);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(106, 27, 154, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        /* Services */
+        .services {
+            background-color: #f1f1f1;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Research Papers */
+        .research-papers {
+            background: white;
+        }
+        
+        .paper-card {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .paper-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .paper-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .paper-link {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, var(--primary), #8e44ad);
+            color: white;
+        }
+        
+        .contact .section-title {
+            color: white;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Dr. Thamarai <span>Selvi</span></div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#research">Research</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>HR Consulting with Research Excellence</h1>
+                <p>Bridging academic research with practical HR solutions for organizational success.</p>
+                <a href="#contact" class="btn">Get Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Dr. Thamarai Selvi</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- Replace with actual image -->
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dr. Thamarai Selvi">
+                </div>
+                <div class="about-text">
+                    <h3>PhD in Human Resource Management</h3>
+                    <p>With over 15 years of experience in HR consulting and academic research, Dr. Thamarai Selvi brings a unique blend of theoretical knowledge and practical expertise to help organizations optimize their human capital.</p>
+                    <p>Her research focuses on employee engagement, organizational behavior, and workplace diversity, with publications in leading international journals.</p>
+                    <p>As a consultant, she has helped numerous organizations transform their HR practices to improve productivity and employee satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Consulting Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Talent Management</h3>
+                    <p>Comprehensive strategies for attracting, developing, and retaining top talent in competitive markets.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Organizational Development</h3>
+                    <p>Data-driven approaches to enhance organizational effectiveness and employee performance.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>HR Policy Design</h3>
+                    <p>Customized HR policies that align with your organizational culture and legal requirements.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Leadership Training</h3>
+                    <p>Executive coaching and leadership development programs based on latest research.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Employee Relations</h3>
+                    <p>Conflict resolution and engagement strategies to foster positive workplace relationships.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-search"></i>
+                    <h3>HR Research & Analytics</h3>
+                    <p>Evidence-based HR decision making using advanced analytics and research methodologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Papers Section -->
+    <section id="research" class="section research-papers">
+        <div class="container">
+            <h2 class="section-title">Research Publications</h2>
+            
+            <div class="paper-card">
+                <h3>The Impact of Flexible Work Arrangements on Employee Productivity</h3>
+                <div class="paper-meta">
+                    <span>Journal of Organizational Behavior, 2022</span>
+                </div>
+                <p>This study examines how remote work policies affect different personality types and job roles.</p>
+                <a href="#" class="paper-link">Read Paper →</a>
+            </div>
+            
+            <div class="paper-card">
+                <h3>Diversity and Inclusion in Tech Companies: A Longitudinal Study</h3>
+                <div class="paper-meta">
+                    <span>Human Resource Management Review, 2021</span>
+                </div>
+                <p>Analysis of diversity initiatives in Fortune 500 tech firms over a 5-year period.</p>
+                <a href="#" class="paper-link">Read Paper →</a>
+            </div>
+            
+            <div class="paper-card">
+                <h3>Emotional Intelligence as a Predictor of Leadership Success</h3>
+                <div class="paper-meta">
+                    <span>Leadership Quarterly, 2020</span>
+                </div>
+                <p>Quantitative study of 200 executives across multiple industries.</p>
+                <a href="#" class="paper-link">Read Paper →</a>
+            </div>
+            
+            <div class="paper-card">
+                <h3>Cross-Cultural Communication Challenges in Multinational Teams</h3>
+                <div class="paper-meta">
+                    <span>International Journal of HRM, 2019</span>
+                </div>
+                <p>Case studies of 12 global organizations with recommendations for improvement.</p>
+                <a href="#" class="paper-link">Read Paper →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <input type="text" id="service">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">Dr. Thamarai <span>Selvi</span></div>
+            <p>HR Consultant & Researcher</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-researchgate"></i></a>
+                <a href="#"><i class="fab fa-google-scholar"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2023 Dr. Thamarai Selvi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
